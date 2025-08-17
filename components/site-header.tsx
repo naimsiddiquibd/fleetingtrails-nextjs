@@ -11,18 +11,10 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 0)
     }
-
     window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
@@ -33,12 +25,14 @@ export function SiteHeader() {
     >
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto">
         <Link href="/" className="flex items-center space-x-2">
-          <span className={`text-xl font-bold ${isScrolled ? "text-blue-900" : "text-white"}`}>Fleeting Trails</span>
+          <span className={`text-xl font-bold ${isScrolled ? "text-blue-900" : "text-white"}`}>
+            Fleeting Trails
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          {["Services", "Projects", "About"].map((item) => (
+          {["Home", "Services", "Projects"].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -63,7 +57,7 @@ export function SiteHeader() {
           </Button>
         </nav>
 
-        {/* Desktop Auth Buttons */}
+        {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <Button
             variant="ghost"
@@ -75,15 +69,20 @@ export function SiteHeader() {
             }
             asChild
           >
-            <Link href="#contact">Contact</Link>
+            {/* WhatsApp link (replace number with your real one) */}
+            <Link href="https://wa.me/8801629551141" target="_blank">
+              Make a call?
+            </Link>
           </Button>
+
           <Button
             size="sm"
             className={
               isScrolled ? "bg-blue-900 text-white hover:bg-blue-800" : "bg-white text-blue-900 hover:bg-gray-200"
             }
+            asChild
           >
-            Get Quote
+            <Link href="#contact">Get Quote</Link>
           </Button>
         </div>
 
@@ -98,7 +97,11 @@ export function SiteHeader() {
           <SheetContent side="right">
             <nav className="flex flex-col space-y-4">
               {["Services", "Projects", "About"].map((item) => (
-                <Link key={item} href={`#${item.toLowerCase()}`} className="text-sm font-medium hover:text-blue-900">
+                <Link
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-sm font-medium hover:text-blue-900"
+                >
                   {item}
                 </Link>
               ))}
@@ -106,7 +109,14 @@ export function SiteHeader() {
               <Button variant="ghost" size="sm" className="justify-start" asChild>
                 <Link href="#contact">Contact</Link>
               </Button>
-              <Button size="sm">Get Quote</Button>
+              <Button size="sm" asChild>
+                <Link href="#contact">Get Quote</Link>
+              </Button>
+              <Button variant="ghost" size="sm" className="justify-start" asChild>
+                <Link href="https://wa.me/8801629551141" target="_blank">
+                  Make a call?
+                </Link>
+              </Button>
             </nav>
           </SheetContent>
         </Sheet>
