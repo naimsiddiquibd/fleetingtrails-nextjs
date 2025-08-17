@@ -32,7 +32,15 @@ export function SiteHeader() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          {["Home", "Services", "Projects"].map((item) => (
+          <Link
+            href="/"
+            className={`text-sm font-medium ${
+              isScrolled ? "text-gray-600 hover:text-blue-900" : "text-white hover:text-gray-200"
+            }`}
+          >
+            Home
+          </Link>
+          {["Services", "Projects"].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -69,7 +77,6 @@ export function SiteHeader() {
             }
             asChild
           >
-            {/* WhatsApp link (replace number with your real one) */}
             <Link href="https://wa.me/8801629551141" target="_blank">
               Make a call?
             </Link>
@@ -96,6 +103,9 @@ export function SiteHeader() {
           </SheetTrigger>
           <SheetContent side="right">
             <nav className="flex flex-col space-y-4">
+              <Link href="/" className="text-sm font-medium hover:text-blue-900">
+                Home
+              </Link>
               {["Services", "Projects", "About"].map((item) => (
                 <Link
                   key={item}
