@@ -4,9 +4,9 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Fleeting Trails',
+  description: 'Specialized in creating innovative digital solutions that help businesses thrive in the modern world.',
+  generator: 'Fleeting Trails by Naim Siddiqui',
 }
 
 export default function RootLayout({

@@ -5,28 +5,34 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 export function ProjectsSection() {
   const projects = [
     {
-      name: "AI-Powered Analytics Dashboard",
-      category: "AI & Machine Learning",
+      name: "Ultimate Organic Life",
+      category: "Web Application",
       description:
-        "Real-time analytics platform with machine learning insights, predictive modeling, and automated reporting for enterprise clients.",
-      technologies: ["Python", "TensorFlow", "React", "PostgreSQL"],
-      image: "/ai-analytics-dashboard.png",
+        "An e-commerce web application built with JavaScript, offering a seamless shopping experience for organic products.",
+      technologies: ["Node.Js", "Express", "React", "PostgreSQL"],
+      image: "https://i.ibb.co.com/hJXQVqpg/8307f30c6254c885ddb15d426dcc21d3.jpg",
+      link: "https://ultimateorganiclife.com/",
+      github: "https://github.com/naimsiddiquibd/schedly-nextjs"
     },
     {
-      name: "Cloud-Native E-Commerce Platform",
-      category: "Cloud Solutions",
+      name: "Foodex Cart",
+      category: "Web Application",
       description:
-        "Microservices-based e-commerce platform deployed on Kubernetes with auto-scaling, monitoring, and CI/CD pipelines.",
-      technologies: ["Node.js", "Docker", "Kubernetes", "AWS"],
-      image: "/cloud-ecommerce-platform.png",
+        "Discover a wide range of fresh, high-quality food products with FoodExCart, an e-commerce web application.",
+      technologies: ["Shopify", "CdnJs", "Cloudflare"],
+      image: "https://i.ibb.co.com/ynJ0cLCg/ecommerce-webdesign-food-market-1024x768.png",
+      link: "https://www.foodexcart.com/",
+      github: "https://github.com/naimsiddiquibd/schedly-nextjs"
     },
     {
-      name: "Cross-Platform Mobile Banking App",
-      category: "Mobile Development",
+      name: "AI-Powered Booking App",
+      category: "App Development",
       description:
-        "Secure mobile banking application with biometric authentication, real-time transactions, and offline capabilities.",
-      technologies: ["React Native", "TypeScript", "Firebase", "Stripe"],
-      image: "/mobile-banking-app.png",
+        "Schedzly is an AI-powered booking app that streamlines appointment scheduling with intelligent automation real-time availability.",
+      technologies: ["Nest.Js", "Next.Js", "PostgreSQL", "Ai integration"],
+      image: "https://i.ibb.co.com/gLgQT6ry/Screenshot-2025-08-18-at-12-25-31-AM.jpg",
+      link: "https://schedzly.vercel.app/",
+      github: "https://github.com/naimsiddiquibd/schedly-nextjs"
     },
   ]
 
@@ -67,14 +73,18 @@ export function ProjectsSection() {
                 </div>
               </CardContent>
               <CardFooter className="flex gap-2">
-                <Button variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 hover:bg-white/10">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  View Live
-                </Button>
-                <Button variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 hover:bg-white/10">
-                  <Github className="w-4 h-4 mr-2" />
-                  Code
-                </Button>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 hover:bg-white/10">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live
+                  </Button>
+                </a>
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 hover:bg-white/10">
+                    <Github className="w-4 h-4 mr-2" />
+                    Code
+                  </Button>
+                </a>
               </CardFooter>
             </Card>
           ))}

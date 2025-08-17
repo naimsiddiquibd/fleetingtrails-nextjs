@@ -9,18 +9,21 @@ export function ServicesSection() {
       title: "Cloud Solutions & DevOps",
       description:
         "Scalable cloud infrastructure, CI/CD pipelines, and containerization solutions using AWS, Azure, Docker, and Kubernetes.",
+      buttonText: "Discuss Cloud Needs →",
     },
     {
       icon: Smartphone,
       title: "Mobile App Development",
       description:
         "Cross-platform mobile applications using React Native and Flutter, with native iOS and Android development expertise.",
+      buttonText: "Build My App →",
     },
     {
       icon: Brain,
       title: "AI & Machine Learning",
       description:
         "Custom AI solutions, chatbots, data analytics, and machine learning models to automate and optimize your business processes.",
+      buttonText: "Start AI Project →",
     },
   ]
 
@@ -44,9 +47,11 @@ export function ServicesSection() {
                 <p className="text-gray-300">{service.description}</p>
               </CardContent>
               <CardFooter>
-                <Button variant="ghost" className="text-blue-400 hover:text-blue-300 hover:bg-white/10">
-                  Learn More →
-                </Button>
+                <a href="#contact">
+                  <Button variant="ghost" className="text-blue-400 hover:text-blue-300 hover:bg-white/10">
+                    {service.buttonText}
+                  </Button>
+                </a>
               </CardFooter>
             </Card>
           ))}

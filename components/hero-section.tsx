@@ -13,16 +13,20 @@ export function HeroSection() {
             the modern world. From web development to digital marketing, we turn your vision into reality.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:space-x-4">
-            <Button size="lg" className="w-full sm:w-auto bg-white text-blue-900 hover:bg-gray-200">
-              View Our Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
-            >
-              Get Started
-            </Button>
+            <a href="#projects">
+              <Button size="lg" className="w-full sm:w-auto bg-white text-blue-900 hover:bg-gray-200">
+                View Our Work
+              </Button>
+            </a>
+            <a href="#contact">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
+              >
+                Get Started
+              </Button>
+            </a>
           </div>
         </div>
       </div>
