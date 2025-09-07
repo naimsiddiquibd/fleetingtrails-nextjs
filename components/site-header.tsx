@@ -20,12 +20,12 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isScrolled ? "bg-black shadow-md opacity-90" : "bg-transparent"
       }`}
     >
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto">
         <Link href="/" className="flex items-center space-x-2">
-          <span className={`text-xl font-bold ${isScrolled ? "text-blue-900" : "text-white"}`}>
+          <span className={`text-xl font-bold ${isScrolled ? "text-white" : "text-white"}`}>
             Fleeting Trails
           </span>
         </Link>
@@ -35,7 +35,7 @@ export function SiteHeader() {
           <Link
             href="/"
             className={`text-sm font-medium ${
-              isScrolled ? "text-gray-600 hover:text-blue-900" : "text-white hover:text-gray-200"
+              isScrolled ? "text-white hover:text-blue-900" : "text-white hover:text-gray-200"
             }`}
           >
             Home
@@ -45,7 +45,7 @@ export function SiteHeader() {
               key={item}
               href={`#${item.toLowerCase()}`}
               className={`text-sm font-medium ${
-                isScrolled ? "text-gray-600 hover:text-blue-900" : "text-white hover:text-gray-200"
+                isScrolled ? "text-white hover:text-blue-900" : "text-white hover:text-gray-200"
               }`}
             >
               {item}
@@ -56,7 +56,7 @@ export function SiteHeader() {
             size="sm"
             className={
               isScrolled
-                ? "text-gray-600 hover:text-blue-900 hover:bg-gray-100"
+                ? "text-white hover:text-blue-900 hover:bg-gray-100"
                 : "text-white hover:text-gray-200 hover:bg-white/10"
             }
             asChild
@@ -72,7 +72,7 @@ export function SiteHeader() {
             size="sm"
             className={
               isScrolled
-                ? "text-gray-600 hover:text-blue-900 hover:bg-gray-100"
+                ? "text-white hover:text-blue-900 hover:bg-gray-100"
                 : "text-white hover:text-gray-200 hover:bg-white/10"
             }
             asChild
