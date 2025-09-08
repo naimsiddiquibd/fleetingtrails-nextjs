@@ -6,7 +6,14 @@
   .text-balance {
     text-wrap: balance;
   }
+  /* Hide Swiper's default navigation arrows */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
 }
+
+}
+
 
 @layer base {
   :root {

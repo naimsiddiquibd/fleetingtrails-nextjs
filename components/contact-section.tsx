@@ -104,7 +104,7 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div>
-            <Card className="bg-white/10 border-0 backdrop-blur-lg">
+            <Card className="bg-white/10 border-0 backdrop-blur-lg mt-[52px]">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-white">Send us a Message</CardTitle>
               </CardHeader>
