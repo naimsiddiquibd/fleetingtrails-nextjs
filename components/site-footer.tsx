@@ -43,13 +43,21 @@ export function SiteFooter() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Support</h3>
             <ul className="space-y-2">
-              {["Contact Us", "FAQ", "Privacy Policy"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm hover:text-blue-400 transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/contact" className="text-sm hover:text-blue-400 transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-sm hover:text-blue-400 transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-sm hover:text-blue-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

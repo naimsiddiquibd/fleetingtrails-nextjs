@@ -61,7 +61,7 @@ export function SiteHeader() {
             }
             asChild
           >
-            <Link href="#contact">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </Button>
         </nav>
 
@@ -117,7 +117,7 @@ export function SiteHeader() {
               ))}
               <hr className="my-4" />
               <Button variant="ghost" size="sm" className="justify-start" asChild>
-                <Link href="#contact">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </Button>
               <Button size="sm" asChild>
                 <Link href="#contact">Get Quote</Link>
