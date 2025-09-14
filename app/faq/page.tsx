@@ -86,7 +86,7 @@ export default function FAQPage() {
                 We're here to help. Get in touch with our team for personalized assistance.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 sm:space-x-4 pt-4">
-                <a href="#contact" className="inline-block">
+                <a href="/contact" className="inline-block">
                   <button className="bg-white text-blue-900 hover:bg-gray-200 px-6 py-3 rounded-md font-medium transition-colors">
                     Contact Us
                   </button>

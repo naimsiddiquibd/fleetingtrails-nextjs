@@ -6,6 +6,48 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import { useState, useEffect } from "react"
 
+// Typing Animation Component
+function TypingText({ text }: { text: string }) {
+  const [displayText, setDisplayText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const typingSpeed = isDeleting ? 80 : 150
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(text.substring(0, index + 1))
+        setIndex((prev) => prev + 1)
+
+        if (index === text.length) {
+          setTimeout(() => setIsDeleting(true), 1000)
+        }
+      } else {
+        setDisplayText(text.substring(0, index - 1))
+        setIndex((prev) => prev - 1)
+
+        if (index === 0) {
+          setIsDeleting(false)
+        }
+      }
+    }, typingSpeed)
+
+    return () => clearTimeout(timeout)
+  }, [index, isDeleting, text])
+
+  return (
+    <span
+      className="inline-block"
+      style={{ width: `${text.length}ch`, whiteSpace: "nowrap" }}
+    >
+      {displayText}
+      <span className="border-r-2 border-white animate-pulse ml-[1px]"></span>
+    </span>
+  )
+}
+
+
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -23,10 +65,14 @@ export function SiteHeader() {
         isScrolled ? "bg-black shadow-md opacity-90" : "bg-transparent"
       }`}
     >
-      <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto">
+      <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto px-4 md:px-0">
         <Link href="/" className="flex items-center space-x-2">
-          <span className={`text-xl font-bold ${isScrolled ? "text-white" : "text-white"}`}>
-            Fleeting Trails
+          <span
+            className={`text-xl font-bold ${
+              isScrolled ? "text-white" : "text-white"
+            }`}
+          >
+            <TypingText text="Fleeting Trails" />
           </span>
         </Link>
 
@@ -35,7 +81,9 @@ export function SiteHeader() {
           <Link
             href="/"
             className={`text-sm font-medium ${
-              isScrolled ? "text-white hover:text-blue-900" : "text-white hover:text-gray-200"
+              isScrolled
+                ? "text-white hover:text-blue-900"
+                : "text-white hover:text-gray-200"
             }`}
           >
             Home
@@ -45,7 +93,9 @@ export function SiteHeader() {
               key={item}
               href={`#${item.toLowerCase()}`}
               className={`text-sm font-medium ${
-                isScrolled ? "text-white hover:text-blue-900" : "text-white hover:text-gray-200"
+                isScrolled
+                  ? "text-white hover:text-blue-900"
+                  : "text-white hover:text-gray-200"
               }`}
             >
               {item}
@@ -85,7 +135,9 @@ export function SiteHeader() {
           <Button
             size="sm"
             className={
-              isScrolled ? "bg-blue-900 text-white hover:bg-blue-800" : "bg-white text-blue-900 hover:bg-gray-200"
+              isScrolled
+                ? "bg-blue-900 text-white hover:bg-blue-800"
+                : "bg-white text-blue-900 hover:bg-gray-200"
             }
             asChild
           >
@@ -96,7 +148,11 @@ export function SiteHeader() {
         {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="sm" className={`px-2 ${isScrolled ? "text-blue-900" : "text-white"}`}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className={`px-2 ${isScrolled ? "text-blue-900" : "text-white"}`}
+            >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle menu</span>
             </Button>
