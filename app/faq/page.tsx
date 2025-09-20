@@ -77,7 +77,7 @@ export default function FAQPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section of */}
         <section className="py-16 bg-gradient-to-r from-blue-900 to-black text-white text-center">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto">
             <div className="space-y-4">
