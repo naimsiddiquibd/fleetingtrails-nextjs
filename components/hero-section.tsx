@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="pt-24 pb-12 md:pt-32 md:pb-24 text-center w-full bg-gradient-to-b from-blue-900 to-black text-white">
+    <section className="pt-24 pb-12 md:pt-32 md:pb-24 text-center w-full bg-gradient-to-b from-blue-900 to-black text-white h-fit md:h-screen md:flex md:items-center md:justify-center">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
