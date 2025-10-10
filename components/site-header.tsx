@@ -91,7 +91,7 @@ export function SiteHeader() {
           {["Services", "Projects"].map((item) => (
             <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               className={`text-sm font-medium ${
                 isScrolled
                   ? "text-white hover:text-blue-900"
@@ -101,6 +101,16 @@ export function SiteHeader() {
               {item}
             </Link>
           ))}
+          <Link
+            href="/case-studies"
+            className={`text-sm font-medium ${
+              isScrolled
+                ? "text-white hover:text-blue-900"
+                : "text-white hover:text-gray-200"
+            }`}
+          >
+            Case Studies
+          </Link>
           <Button
             variant="ghost"
             size="sm"
@@ -141,7 +151,7 @@ export function SiteHeader() {
             }
             asChild
           >
-            <Link href="#contact">Get Quote</Link>
+            <Link href="/#contact">Get Quote</Link>
           </Button>
         </div>
 
@@ -165,18 +175,24 @@ export function SiteHeader() {
               {["Services", "Projects", "About"].map((item) => (
                 <Link
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={`/#${item.toLowerCase()}`}
                   className="text-sm font-medium hover:text-blue-900"
                 >
                   {item}
                 </Link>
               ))}
+              <Link
+                href="/case-studies"
+                className="text-sm font-medium hover:text-blue-900"
+              >
+                Case Studies
+              </Link>
               <hr className="my-4" />
               <Button variant="ghost" size="sm" className="justify-start" asChild>
                 <Link href="/contact">Contact</Link>
               </Button>
               <Button size="sm" asChild>
-                <Link href="#contact">Get Quote</Link>
+                <Link href="/#contact">Get Quote</Link>
               </Button>
               <Button variant="ghost" size="sm" className="justify-start" asChild>
                 <Link href="https://wa.me/8801629551141" target="_blank">

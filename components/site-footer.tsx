@@ -21,13 +21,21 @@ export function SiteFooter() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Company</h3>
             <ul className="space-y-2">
-              {["About Us", "Our Process", "Case Studies"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm hover:text-blue-400 transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="#" className="text-sm hover:text-blue-400 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm hover:text-blue-400 transition-colors">
+                  Our Process
+                </Link>
+              </li>
+              <li>
+                <Link href="/case-studies" className="text-sm hover:text-blue-400 transition-colors">
+                  Case Studies
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="space-y-4">

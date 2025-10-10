@@ -55,7 +55,7 @@ export function ProjectsSection() {
     <section className="py-20 md:py-32 bg-gradient-to-b from-blue-900 to-indigo-900 text-white" id="projects">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-sm font-medium text-blue-400">Portfolio</span>
+          {/* <span className="text-sm font-medium text-blue-400">Portfolio</span> */}
           <h2 className="mt-2 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
             Featured Projects
           </h2>
