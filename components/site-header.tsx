@@ -61,11 +61,12 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${
-        isScrolled ? "bg-black shadow-md opacity-90" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 gpu-accelerated"
     >
-      <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto px-4 md:px-0">
+      <div className="container flex h-16 items-center justify-between max-w-6xl mx-auto px-4 md:px-4 rounded-[1.25rem] border border-[#181977] mt-4"  style={{
+          backgroundColor: "transparent",
+          backgroundImage: "radial-gradient(at center, #080220F2 60%, #010359 100%)",
+        }}>
         <Link href="/" className="flex items-center space-x-2">
           <span
             className={`text-xl font-bold ${
