@@ -16,7 +16,7 @@ export function ContactSection() {
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@fleetingtrails.com",
+      details: "fleetingtrails@gmail.com",
       description: "Send us an email anytime!",
     },
     {
