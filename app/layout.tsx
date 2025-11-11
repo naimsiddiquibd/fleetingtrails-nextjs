@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Fleeting Trails',
   description: 'Specialized in creating innovative digital solutions that help businesses thrive in the modern world.',
   generator: 'Fleeting Trails by Naim Siddiqui',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
